@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập & Đăng ký - Tuấn Anh Coffee & Tea</title>
+  <link rel="stylesheet" href="styleasm2.css">  <!-- file CSS chung của bạn -->
+</head>
+<body style="background: #f9f5f0; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+
+  <div class="auth-container">
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login">Đăng nhập</button>
+      <button class="auth-tab" data-tab="register">Đăng ký</button>
+    </div>
+
+    <!-- Form Đăng nhập -->
+    <div id="loginFormWrapper" class="auth-form active">
+      <h2 class="auth-title">Đăng nhập</h2>
+      <form id="loginForm">
+        <label for="loginUsername" class="auth-label">Tên đăng nhập:</label>
+        <input type="text" id="loginUsername" class="auth-input" required>
+
+        <label for="loginPassword" class="auth-label">Mật khẩu:</label>
+        <input type="password" id="loginPassword" class="auth-input" required>
+
+        <button type="submit" class="auth-submit">Đăng nhập</button>
+      </form>
+    </div>
+
+    <!-- Form Đăng ký -->
+    <div id="registerFormWrapper" class="auth-form">
+      <h2 class="auth-title">Đăng ký</h2>
+      <form id="registerForm">
+        <label for="regUsername" class="auth-label">Tên đăng nhập:</label>
+        <input type="text" id="regUsername" class="auth-input" required>
+
+        <label for="regPassword" class="auth-label">Mật khẩu:</label>
+        <input type="password" id="regPassword" class="auth-input" required>
+
+        <button type="submit" class="auth-submit">Đăng ký</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Chuyển tab
+    const tabs = document.querySelectorAll('.auth-tab');
+    const forms = document.querySelectorAll('.auth-form');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        forms.forEach(f => f.classList.remove('active'));
+        document.getElementById(tab.dataset.tab + 'FormWrapper').classList.add('active');
+      });
+    });
+
+    // Đăng ký - lưu localStorage
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const username = document.getElementById("regUsername").value.trim();
+      const password = document.getElementById("regPassword").value;
+
+      if (username && password) {
+        localStorage.setItem("auth_username", username);
+        localStorage.setItem("auth_password", password); // Lưu ý: Chỉ demo, không an toàn thực tế!
+        alert("Đăng ký thành công! Bạn có thể đăng nhập ngay.");
+        // Chuyển sang tab đăng nhập
+        document.querySelector('[data-tab="login"]').click();
+      }
+    });
+
+    // Đăng nhập
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const username = document.getElementById("loginUsername").value.trim();
+      const password = document.getElementById("loginPassword").value;
+
+      const savedUser = localStorage.getItem("auth_username");
+      const savedPass = localStorage.getItem("auth_password");
+
+      if (username === savedUser && password === savedPass) {
+        alert("Đăng nhập thành công! Chào mừng quay lại.");
+        window.location.href = "ASM2_Dangtrantuananh_pi03010.html"; // trang chủ
+      } else {
+        alert("Sai tên đăng nhập hoặc mật khẩu!");
+      }
+    });
+  </script>
+
+</body>
+</html>

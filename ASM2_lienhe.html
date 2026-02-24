@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ - Tuấn Anh Coffee & Tea</title>
+  <link rel="stylesheet" href="styleasm2.css">  <!-- gắn CSS chung của bạn ở đây -->
+</head>
+<body>
+
+  <div class="cta-contact-container">
+    <h2 class="cta-contact-title">Liên hệ với chúng tôi</h2>
+    
+    <form id="cta-contact-form">
+      <label for="cta-name" class="cta-contact-label">Họ và tên:</label>
+      <input type="text" id="cta-name" class="cta-contact-input" required>
+
+      <label for="cta-email" class="cta-contact-label">Email:</label>
+      <input type="email" id="cta-email" class="cta-contact-input" required>
+
+      <label for="cta-message" class="cta-contact-label">Nội dung liên hệ:</label>
+      <textarea id="cta-message" class="cta-contact-textarea" rows="5" required></textarea>
+
+      <div class="cta-button-group">
+        <button type="submit" class="cta-submit-btn">Gửi liên hệ</button>
+        <a href="ASM2_Dangtrantuananh_pi03010.html" class="cta-home-link">Quay lại trang chủ</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("cta-contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Chúng tôi sẽ liên hệ với bạn sớm nhất có thể! Cảm ơn bạn đã liên hệ với Tuấn Anh Coffee & Tea.");
+      document.getElementById("cta-contact-form").reset();
+    });
+  </script>
+
+</body>
+</html>

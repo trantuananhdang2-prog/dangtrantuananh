@@ -1,0 +1,378 @@
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f5f0;
+      color: #3c2f2f;
+      line-height: 1.6;
+    }
+
+    /* Logo & Header */
+    .logo {
+      display: block;
+      width: 180px;
+      margin: 20px auto;
+    }
+    header {
+      background: linear-gradient(to right, #3c2f2f, #5c4033);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #e8c39e;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #e8c39e;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* Hero / Banner */
+    .hero {
+      background: url('ẢNHHEADER.png') center/cover no-repeat;
+      height: 60vh;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(60, 47, 47, 0.55);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #5c4033;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: #e67e22;
+      display: block;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    #gioithieu p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      color: #555;
+    }
+
+    #hinhanh {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    #hinhanh ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0 1.5rem 2rem;
+    }
+    #hinhanh img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.4s;
+    }
+    #hinhanh img:hover {
+      transform: scale(1.05);
+    }
+    #hinhanh li {
+      text-align: center;
+      font-weight: 600;
+      color: #5c4033;
+    }
+
+    /* Footer */
+    footer {
+      background: #3c2f2f;
+      color: #e8c39e;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+    }
+    footer br {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      nav ul { flex-direction: column; gap: 1.2rem; }
+      .hero h2 { font-size: 2.5rem; }
+      header h1 { font-size: 1.8rem; }
+    }
+    /* ================== FORM LIÊN HỆ - CTA ================== */
+.cta-contact-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(60, 47, 47, 0.12);
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #e8c39e20;
+  margin: 2rem auto;
+}
+
+.cta-contact-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #5c4033;
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+.cta-contact-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: #e67e22;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.cta-contact-label {
+  display: block;
+  margin: 0.8rem 0 0.4rem;
+  font-weight: 600;
+  color: #5c4033;
+  font-size: 1rem;
+}
+
+.cta-contact-input,
+.cta-contact-textarea {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #d4c4b6;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fffaf4;
+  transition: all 0.3s ease;
+}
+
+.cta-contact-input:focus,
+.cta-contact-textarea:focus {
+  border-color: #e67e22;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+  background: white;
+}
+
+.cta-contact-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.cta-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.cta-submit-btn,
+.cta-home-link {
+  background: #e67e22;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  text-align: center;
+}
+
+.cta-submit-btn:hover,
+.cta-home-link:hover {
+  background: #d35400;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(230, 126, 34, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .cta-contact-container {
+    padding: 1.8rem;
+  }
+  .cta-contact-title {
+    font-size: 1.7rem;
+  }
+  .cta-button-group {
+    flex-direction: column;
+  }
+}
+/* ================== FORM ĐĂNG NHẬP / ĐĂNG KÝ - AUTH ================== */
+.auth-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(60, 47, 47, 0.12);
+  width: 100%;
+  max-width: 420px;
+  margin: 4rem auto;
+  border: 1px solid #e8c39e20;
+}
+
+.auth-tabs {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #d4c4b6;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #5c4033;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: none;
+  border: none;
+}
+
+.auth-tab.active {
+  color: #e67e22;
+  border-bottom: 4px solid #e67e22;
+}
+
+.auth-tab:hover {
+  color: #e67e22;
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #5c4033;
+  margin-bottom: 1.5rem;
+}
+
+.auth-form {
+  display: none;
+}
+
+.auth-form.active {
+  display: block;
+}
+
+.auth-label {
+  display: block;
+  margin: 0.8rem 0 0.4rem;
+  font-weight: 600;
+  color: #5c4033;
+  font-size: 1rem;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #d4c4b6;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fffaf4;
+  transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+  border-color: #e67e22;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+  background: white;
+}
+
+.auth-submit {
+  width: 100%;
+  background: #e67e22;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.auth-submit:hover {
+  background: #d35400;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(230, 126, 34, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 1.8rem;
+    margin: 2rem 1rem;
+  }
+  .auth-title {
+    font-size: 1.6rem;
+  }
+}
